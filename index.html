@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: inherit;
+        }
+
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+            font-family: "Figtree", sans-serif;
+        }
+
+        .header {
+            background: #000;
+            padding: 2rem;
+            padding: 7rem 2rem;
+            position: relative;
+            box-shadow: 0 0 .5rem rgba(0,0,0,.24);
+            border-bottom: 2px solid #545e64;
+            color: #ccc;
+            display: flex;
+            place-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            font-size: 3.2rem;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            column-gap: .5rem;
+            white-space: nowrap;
+            
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        h2 {
+            color: #3f93c0;
+            font-size: 1.8rem;
+        }
+
+        .hero {
+            height: 70vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            row-gap: 5rem;
+            box-shadow: 0 0 .5rem rgba(0,0,0,.5);
+            border-bottom: 4px solid #133b51;
+        }
+
+        .hero::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+            left:0;
+            top:0;
+            background: rgba(0,0,0,.15);
+            backdrop-filter: blur(1px);
+        }
+
+        .vid {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0; 
+            left: 0;
+        }
+
+        .icon {
+            height: 6rem;
+            display: block;
+        }
+
+        .hero__text {
+            z-index: 3;
+            color: #eee;
+            font-size: 4.5rem;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #000;
+            text-align: center;
+        }
+
+        .hero__action-btn {
+            z-index: 3;
+            background: rgba(255,255,255,.7);
+            border:none;
+            display: block;
+            padding: 1.5rem 2rem;
+            font-family: inherit;
+            font-size: 2rem;
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0 0 .5rem rgba(0,0,0,.7);
+        }
+
+        .services {
+            background: #546e7e;
+            padding: 7rem 2rem;
+        }
+
+        .service-tile-collection {
+            display: flex;
+            max-width: 120rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            margin:0 auto;
+        }
+
+        .service-tile {
+            background: rgba(250,250,250,.35);
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 5px solid #18304d;
+            box-shadow: 0 0 .5rem rgba(0,0,0,.7);
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 30rem;
+        }
+
+        .service-tile__icon {
+            height: 15rem;
+        }
+
+        .service-tile__text {
+            font-size: 2.4rem;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><img src="./code_icon.svg" class="icon"/> Hayden Bradfield</h1>
+        <h2>Independant Web Development Services</h2>
+    </header>
+    <section class="hero">
+        <video class="vid" src="./output.mp4" autoplay loop muted preload="auto"></video>
+        <h3 class="hero__text">Take your idea to the digital world</h3>
+        <button class="hero__action-btn">View Services</button>
+    </section>
+    <section class="services">
+        <div class="service-tile-collection">
+            <div class="service-tile">
+                <img src="./code_3.svg" class="service-tile__icon" />
+                <h4 class="service-tile__text">Custom Websites</h4>
+            </div>
+            <div class="service-tile">
+                <img src="./search_up.svg" class="service-tile__icon" />
+                <h4 class="service-tile__text">SEO</h4>
+            </div>
+            <div class="service-tile">
+                <img src="./pwa.svg" class="service-tile__icon" />
+                <h4 class="service-tile__text">PWA Development</h4>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

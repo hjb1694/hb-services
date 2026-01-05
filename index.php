@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="header__logo"><img src="/public/icons/code_icon.svg" class="header__logo-icon"/> Hayden Bradfield</h1>
+        <h1 class="header__logo"><img src="/public/icons/code_icon.svg" class="header__logo-icon" alt="code icon"/> Hayden Bradfield</h1>
         <h2 class="header__subtext">Independant Web Development Services</h2>
     </header>
     <section class="hero">
@@ -27,23 +27,23 @@
     <section class="services" id="services">
         <div class="service-tile-collection">
             <div class="service-tile">
-                <img src="/public/icons/code_3.svg" class="service-tile__icon" />
+                <img src="/public/icons/code_3.svg" class="service-tile__icon" alt="code icon" />
                 <h4 class="service-tile__text">Custom Websites</h4>
             </div>
             <div class="service-tile">
-                <img src="/public/icons/search_up.svg" class="service-tile__icon" />
+                <img src="/public/icons/search_up.svg" class="service-tile__icon" alt="search seo icon" />
                 <h4 class="service-tile__text">SEO</h4>
             </div>
             <div class="service-tile">
-                <img src="/public/icons/pwa.svg" class="service-tile__icon" />
+                <img src="/public/icons/pwa.svg" class="service-tile__icon" alt="pwa icon" />
                 <h4 class="service-tile__text">PWA Development</h4>
             </div>
             <div class="service-tile">
-                <img src="/public/icons/head_idea.svg" class="service-tile__icon" />
+                <img src="/public/icons/head_idea.svg" class="service-tile__icon" alt="mind idea icon" />
                 <h4 class="service-tile__text">Consulting</h4>
             </div>
             <div class="service-tile">
-                <img src="/public/icons/mobile.svg" class="service-tile__icon" />
+                <img src="/public/icons/mobile.svg" class="service-tile__icon" alt="phone with heart icon" />
                 <h4 class="service-tile__text">Hybrid Apps</h4>
             </div>
         </div>

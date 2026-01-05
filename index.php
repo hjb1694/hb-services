@@ -122,8 +122,6 @@
 
             subbut.innerHTML = "Sending...";
 
-            console.log('full_name: ', fields.fullName.value.trim());
-
            
             fetch('https://services.haydenbradfield.com/process_contact_form.php', {
             method: 'POST',
@@ -134,8 +132,7 @@
                 full_name: fields.fullName.value.trim() || 'missing',
                 email: fields.email.value.trim() || 'missing',
                 message: fields.message.value.trim() || 'missing'
-            }
-            }).then(response => {
+            }}).then(response => {
                 if(!response.ok){
                     throw new Error();
                 }

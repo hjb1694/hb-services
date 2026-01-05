@@ -1,0 +1,20 @@
+
+@use "./fontfaces";
+@use "./resets";
+@use "./base";
+
+
+//Components
+@use "./components/header";
+@use "./components/hero";
+@use "./components/services-section";
+@use "./components/benefits-section";
+@use "./components/contact-section";
+@use "./components/footer";
+
+
+@media (max-width: 600px) {
+    .benefit-item {
+        flex-direction: column;
+    }
+}

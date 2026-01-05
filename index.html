@@ -3,324 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin:0;
-            padding:0;
-            box-sizing: inherit;
-        }
-
-        html {
-            box-sizing: border-box;
-            font-size: 62.5%;
-            font-family: "Figtree", sans-serif;
-        }
-
-        .header {
-            background: #000;
-            padding: 2rem;
-            padding: 7rem 2rem;
-            position: relative;
-            box-shadow: 0 0 .5rem rgba(0,0,0,.24);
-            border-bottom: 2px solid #545e64;
-            color: #ccc;
-            display: flex;
-            place-items: center;
-            flex-direction: column;
-        }
-
-        .header h1 {
-            margin-bottom: 2rem;
-            font-size: 3.2rem;
-            color: #ccc;
-            display: flex;
-            align-items: center;
-            column-gap: .5rem;
-            white-space: nowrap;
-            
-        }
-
-        .header h1, h2 {
-            text-align: center;
-        }
-
-        .header h2 {
-            color: #3f93c0;
-            font-size: 1.8rem;
-        }
-
-        .hero {
-            height: 70vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
-            row-gap: 5rem;
-            box-shadow: 0 0 .5rem rgba(0,0,0,.5);
-            border-bottom: 4px solid #133b51;
-        }
-
-        .hero::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            position: absolute;
-            left:0;
-            top:0;
-            background: rgba(0,0,0,.15);
-            backdrop-filter: blur(1px);
-        }
-
-        .vid {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            position: absolute;
-            top: 0; 
-            left: 0;
-        }
-
-        .icon {
-            height: 6rem;
-            display: block;
-        }
-
-        .hero__text {
-            z-index: 3;
-            color: #eee;
-            font-size: 4.5rem;
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px #000;
-            text-align: center;
-        }
-
-        .hero__action-btn {
-            z-index: 3;
-            background: rgba(255,255,255,.7);
-            border:none;
-            display: block;
-            padding: 1.5rem 2rem;
-            font-family: inherit;
-            font-size: 2rem;
-            color: #000;
-            font-weight: bold;
-            box-shadow: 0 0 .5rem rgba(0,0,0,.7);
-        }
-
-        .services {
-            background: #5c7788;
-            padding: 7rem 2rem;
-        }
-
-        .service-tile-collection {
-            display: flex;
-            max-width: 120rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            margin:0 auto;
-        }
-
-        .service-tile {
-            background: rgba(250,250,250,.35);
-            padding: 3rem;
-            border-radius: 1rem;
-            border: 5px solid #18304d;
-            box-shadow: 0 0 .5rem rgba(0,0,0,.7);
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: center;
-            align-items: center;
-            flex-basis: 30rem;
-        }
-
-        .service-tile__icon {
-            height: 15rem;
-        }
-
-        .service-tile__text {
-            font-size: 2.4rem;
-            color: #000;
-        }
-
-        .benefits {
-            min-height: 40rem;
-            background: #0d2f4c;
-            padding: 6rem 2rem;
-        }
-
-        .benefit-list {
-            display: flex;
-            flex-direction: column;
-            row-gap: 2rem;
-            max-width: 90rem;
-            margin:0 auto;
-            list-style: none;
-        }
-
-        .benefit-item {
-            background: rgba(255,255,255,.7);
-            padding:2rem;
-            border-radius: 0 1rem 0 2rem;
-            border: 2px solid #aaa;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .benefit-item__text {
-            font-size: 2.6rem;
-        }
-
-        .checkmark-icon {
-            height: 8rem;
-        }
-
-        .contact {
-            min-height: 40rem;
-            background: #ced8e0;
-            padding: 4rem 2rem;
-        }
-
-        .contact h2 {
-            font-size: 2.8rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-form {
-            display: block;
-            max-width: 90rem;
-            margin:2rem auto;
-        }
-
-        .form-group {
-            margin: 2rem 0;
-        }
-
-        .text-field,
-        .message-area {
-            border: 2px solid #0d2f4c;
-            padding: 3px;
-            background: #fff;
-        }
-
-        .message-area {
-            display:block;
-            width: 100%;
-            min-height: 20rem;
-            outline: none;
-            font-family: inherit;
-            resize: none;
-            font-size: 1.8rem;
-        }
-
-        .text-field__label {
-            display: block;
-            font-size: 1.6rem;
-            font-weight: bold;
-        }
-
-        .text-field__input {
-            display: block;
-            width: 100%;
-            font-size: 2.4rem;
-            outline: none;
-            border:none;
-            font-family: inherit;
-        }
-
-        .footer {
-            background: #222;
-            min-height: 10rem;
-            color: #eee;
-            padding: 2rem;
-            display: flex;
-            flex-flow: column wrap;
-            align-items: center;
-            row-gap: 2rem;
-        }
-
-        .footer small {
-            font-size: 1.4rem;
-        }
-
-        .footer a,
-        .footer a:link,
-        .footer a:visited {
-            color: #eee;
-            text-decoration: none;
-            font-size: 2rem;
-        }
-
-        .subbut {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            column-gap: 1rem;
-            width: 25rem;
-            background: #0d2f4c;
-            color: #eee;
-            border: none;
-            margin:0 auto;
-            font-family: inherit;
-            font-size: 2.6rem;
-            padding: 1rem 2rem;
-            text-transform: uppercase;
-            border-radius: 1rem;
-            cursor: pointer;
-        }
-
-
-        @media (max-width: 600px) {
-            .benefit-item {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>Hayden Bradfield - Independant Web Services</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
 </head>
 <body>
     <header class="header">
-        <h1><img src="./code_icon.svg" class="icon"/> Hayden Bradfield</h1>
-        <h2>Independant Web Development Services</h2>
+        <h1 class="header__logo"><img src="/public/icons/code_icon.svg" class="header__logo-icon"/> Hayden Bradfield</h1>
+        <h2 class="header__subtext">Independant Web Development Services</h2>
     </header>
     <section class="hero">
-        <video class="vid" src="./output.mp4" autoplay loop muted preload="auto"></video>
+        <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto"></video>
         <h3 class="hero__text">Take your idea to the digital world</h3>
         <button class="hero__action-btn">View Services</button>
     </section>
     <section class="services">
         <div class="service-tile-collection">
             <div class="service-tile">
-                <img src="./code_3.svg" class="service-tile__icon" />
+                <img src="/public/icons/code_3.svg" class="service-tile__icon" />
                 <h4 class="service-tile__text">Custom Websites</h4>
             </div>
             <div class="service-tile">
-                <img src="./search_up.svg" class="service-tile__icon" />
+                <img src="/public/icons/search_up.svg" class="service-tile__icon" />
                 <h4 class="service-tile__text">SEO</h4>
             </div>
             <div class="service-tile">
-                <img src="./pwa.svg" class="service-tile__icon" />
+                <img src="/public/icons/pwa.svg" class="service-tile__icon" />
                 <h4 class="service-tile__text">PWA Development</h4>
             </div>
             <div class="service-tile">
-                <img src="./head_idea.svg" class="service-tile__icon" />
+                <img src="/public/icons/head_idea.svg" class="service-tile__icon" />
                 <h4 class="service-tile__text">Consulting</h4>
             </div>
             <div class="service-tile">
-                <img src="./mobile.svg" class="service-tile__icon" />
+                <img src="/public/icons/mobile.svg" class="service-tile__icon" />
                 <h4 class="service-tile__text">Hybrid Apps</h4>
             </div>
         </div>
@@ -328,25 +43,25 @@
     <section class="benefits">
         <ul class="benefit-list">
             <li class="benefit-item">
-                <img class="checkmark-icon" src="./blue_check.svg" alt="blue checkmark icon" />
+                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Affordable</p>
             </li>
             <li class="benefit-item">
-                <img class="checkmark-icon" src="./blue_check.svg" alt="blue checkmark icon" />
+                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Dependable</p>
             </li>
             <li class="benefit-item">
-                <img class="checkmark-icon" src="./blue_check.svg" alt="blue checkmark icon" />
+                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Communicative</p>
             </li>
             <li class="benefit-item">
-                <img class="checkmark-icon" src="./blue_check.svg" alt="blue checkmark icon" />
+                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Made in the USA!</p>
             </li>
         </ul>
     </section>
     <section class="contact">
-        <h2>Inquire Today</h2>
+        <h2 class="contact__heading">Inquire Today</h2>
         <form class="contact-form">
             <div class="form-group">
                 <div class="text-field">
@@ -364,7 +79,7 @@
                 <textarea class="message-area" placeholder="Type your message here :)"></textarea>
             </div>
             <div class="form-group">
-                <button class="subbut">Submit <img src="./send_icon.svg" alt="send icon" /></button>
+                <button class="subbut">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
             </div>
         </form>
     </section>

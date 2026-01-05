@@ -1,0 +1,22 @@
+.footer {
+    background: #222;
+    min-height: 10rem;
+    color: #eee;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    row-gap: 2rem;
+
+    small {
+        font-size: 1.4rem;
+    }
+
+    a,
+    a:link,
+    a:visited {
+        color: #eee;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+}

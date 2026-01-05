@@ -30,7 +30,7 @@ try{
         array_push('Invalid Full Name');
     }
 
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 150){
         array_push('Invalid Email');
     }
 

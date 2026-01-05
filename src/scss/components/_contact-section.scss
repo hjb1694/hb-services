@@ -74,3 +74,21 @@
     cursor: pointer;
 }
 
+.errbox {
+    display: none;
+    list-style-position: inside;
+    border: 2px solid #f00;
+    border-radius: 1rem;
+    padding: 2rem;
+    font-size: 1.4rem;
+    background: #ffecec;
+
+    &::marker {
+        color: #f00;
+    }
+
+    .show{
+        display:block;
+    }
+}
+

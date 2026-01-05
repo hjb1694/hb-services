@@ -12,6 +12,7 @@
     <meta property="og:image" content="https://services.haydenbradfield.com/public/img/web_services_img.png" /> 
     <title>Hayden Bradfield - Independant Web Services</title>
     <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=4" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 <body>
     <header class="header">

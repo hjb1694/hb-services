@@ -17,4 +17,10 @@
     .benefit-item {
         flex-direction: column;
     }
+
+    .header {
+        &__logo {
+            font-size: 3rem;
+        }
+    }
 }

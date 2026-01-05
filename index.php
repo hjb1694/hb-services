@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hayden Bradfield - Independant Web Services</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=4" />
 </head>
 <body>
     <header class="header">
@@ -14,9 +14,9 @@
     <section class="hero">
         <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto"></video>
         <h3 class="hero__text">Take your idea to the digital world</h3>
-        <button class="hero__action-btn">View Services</button>
+        <a class="hero__action-btn" href="#services">View Services</a>
     </section>
-    <section class="services">
+    <section class="services" id="services">
         <div class="service-tile-collection">
             <div class="service-tile">
                 <img src="/public/icons/code_3.svg" class="service-tile__icon" />
@@ -91,7 +91,7 @@
         <p><a href="https://www.haydenbradfield.com">www.haydenbradfield.com</a></p>
     </footer>
     <script>
-        const contactForm = document.querySelector('contact-form');
+        const contactForm = document.querySelector('.contact-form');
         const errbox = document.querySelector('.errbox');
         const subbut = document.querySelector('.subbut');
 
@@ -122,32 +122,32 @@
 
             subbut.innerHTML = "Sending...";
 
-            try{
-                const fd = new FormData();
-                fd.append('full_name', fields.fullName.value.trim());
-                fd.append('email', fields.email.value.trim());
-                fd.append('message', fields.message.value.trim());
+            console.log('full_name: ', fields.fullName.value.trim());
 
-                const response = await fetch('/process_contact_form.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    },
-                    mode: 'no-cors',
-                    body: fd
-                });
-
-                if(!response.ok) throw new Error();
-
+           
+            fetch('https://services.haydenbradfield.com/process_contact_form.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: {
+                full_name: fields.fullName.value.trim() || 'missing',
+                email: fields.email.value.trim() || 'missing',
+                message: fields.message.value.trim() || 'missing'
+            }
+            }).then(response => {
+                if(!response.ok){
+                    throw new Error();
+                }
                 alert('Successfully submitted!');
-            }
-            catch(e){
-                errbox.insertAdjacentHTML('<li>An error has occurred.</li>');
+            }).catch(e => {
+                console.error(e);
+                errbox.insertAdjacentHTML('beforeend', '<li>An error has occurred.</li>');
                 errbox.classList.add('show');
-            }finally{
+            }).finally(() => {
                 subbut.innerHTML = `Submit <img src="/public/icons/send_icon.svg" alt="send icon" />`;
-            }
-
+            });
+               
 
         }
 

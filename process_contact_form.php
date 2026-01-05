@@ -60,15 +60,15 @@ try{
     echo json_encode(["message" => "submitted!"]);
 
 }catch(Exception $e){
-    if($e->message){
-        switch($e->message){
+    if($e->getMessage()){
+        switch($e->getMessage()){
             case "INVALID_REQUEST":
                 http_response_code(403);
                 echo json_encode(["error" => "INVALID_REQUEST"]);
                 break;
             case "FIELD_NOT_SET":
                 http_response_code(422);
-                echo json_encode(["error" => "MISSING_FIELD"]);
+                echo json_encode(["error" => "MISSING_FIELD", "fields" => $HTTP_RAW_POST_DATA]);
                 break;
             case "VALIDATION_ERRORS":
                 http_response_code(422);

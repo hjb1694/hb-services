@@ -44,7 +44,9 @@
         text-align: center;
     }
 
-    &__action-btn {
+    &__action-btn,
+    &__action-btn:link,
+    &__action-btn:visited {
         z-index: 3;
         background: rgba(255,255,255,.7);
         border:none;
@@ -55,6 +57,7 @@
         color: #000;
         font-weight: bold;
         box-shadow: 0 0 .5rem rgba(0,0,0,.7);
+        text-decoration: none;
     }
 }
 

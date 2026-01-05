@@ -126,13 +126,15 @@
             fetch('https://services.haydenbradfield.com/process_contact_form.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json',
+                'Accept': 'appplication/json'
             },
-            body: {
-                full_name: fields.fullName.value.trim() || 'missing',
-                email: fields.email.value.trim() || 'missing',
-                message: fields.message.value.trim() || 'missing'
-            }}).then(response => {
+            body: JSON.stringify({
+                full_name: fields.fullName.value.trim(),
+                email: fields.email.value.trim(),
+                message: fields.message.value.trim()
+            })
+            }).then(response => {
                 if(!response.ok){
                     throw new Error();
                 }

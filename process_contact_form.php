@@ -7,11 +7,16 @@ try{
         throw new Exception('INVALID_REQUEST');
     }
 
+    $raw = file_get_contents("php://input");
+    $content = trim($raw);
     $fields = ['full_name', 'email', 'message'];
+    $data = json_decode($content, true);
 
     foreach($fields as $field) {
-        if(!isset($_POST[$field]) || !is_string($_POST[$field])){
-            throw new Exception('FIELD_NOT_SET');
+        foreach($data as $key => $value){
+            if(!in_array($key, $fields) || !is_string($value)){
+                throw new Exception('FIELD_NOT_SET');
+            }
         }
     }
 
@@ -19,23 +24,23 @@ try{
         return trim(htmlspecialchars($value));
     }
 
-    $fullName = $_POST['full_name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    $fullName = $data["full_name"];
+    $email = $data["email"];
+    $message = $data["message"];
 
-    $validationErrors = [];
+    $validationErrors = array();
 
 
     if(grapheme_strlen($fullName) < 2 || grapheme_strlen($fullName) > 50){
-        array_push('Invalid Full Name');
+        array_push($validationErrors, 'Invalid Full Name');
     }
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 150){
-        array_push('Invalid Email');
+        array_push($validationErrors, 'Invalid Email');
     }
 
     if(grapheme_strlen($message) < 10 || grapheme_strlen($message) > 1000){
-        array_push('Invalid Message body');
+        array_push($validationErrors, 'Invalid Message body');
     }
 
     if(count($validationErrors)){
@@ -68,7 +73,7 @@ try{
                 break;
             case "FIELD_NOT_SET":
                 http_response_code(422);
-                echo json_encode(["error" => "MISSING_FIELD", "fields" => $HTTP_RAW_POST_DATA]);
+                echo json_encode(["error" => "MISSING_FIELD", "raw" => $raw]);
                 break;
             case "VALIDATION_ERRORS":
                 http_response_code(422);

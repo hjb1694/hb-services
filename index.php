@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hayden Bradfield provides web development services, custom websites, and more!" />
+    <meta name="keywords" content="Hayden, Bradfield, web, development"/>
+    <meta property="og:site_name" content="Hayden Bradfield Web Services" />
+    <meta property="og:title" content="Hayden Bradfield Web Services" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://services.haydenbradfield.com" />
+    <meta property="og:image" content="https://services.haydenbradfield.com/public/img/web_services_img.png" /> 
     <title>Hayden Bradfield - Independant Web Services</title>
     <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=4" />
 </head>
@@ -12,7 +19,7 @@
         <h2 class="header__subtext">Independant Web Development Services</h2>
     </header>
     <section class="hero">
-        <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto"></video>
+        <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto" playsinline></video>
         <h3 class="hero__text">Take your idea to the digital world</h3>
         <a class="hero__action-btn" href="#services">View Services</a>
     </section>

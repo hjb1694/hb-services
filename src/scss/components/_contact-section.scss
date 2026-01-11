@@ -82,8 +82,9 @@
     padding: 2rem;
     font-size: 1.4rem;
     background: #ffecec;
+    color: #f00;
 
-    &::marker {
+    li::marker {
         color: #f00;
     }
 

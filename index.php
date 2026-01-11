@@ -11,7 +11,8 @@
     <meta property="og:url" content="https://services.haydenbradfield.com" />
     <meta property="og:image" content="https://services.haydenbradfield.com/public/img/web_services_img.png" /> 
     <title>Hayden Bradfield - Independant Web Services</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=4" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=6" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 <body>
@@ -19,6 +20,10 @@
         <h1 class="header__logo"><img src="/public/icons/code_icon.svg" class="header__logo-icon" alt="code icon"/> Hayden Bradfield</h1>
         <h2 class="header__subtext">Independant Web Development Services</h2>
     </header>
+    <div class="submission-toast">
+        <img class="submission-toast__icon" src="/public/icons/success_icon.svg" alt="success icon"/>
+        <p class="submission-toast__message">Your inquiry has been successfully submitted!</p>
+    </div>
     <section class="hero">
         <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto" playsinline></video>
         <h3 class="hero__text">Take your idea to the digital world</h3>
@@ -50,19 +55,19 @@
     </section>
     <section class="benefits">
         <ul class="benefit-list">
-            <li class="benefit-item">
+            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
                 <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Affordable</p>
             </li>
-            <li class="benefit-item">
+            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
                 <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Dependable</p>
             </li>
-            <li class="benefit-item">
+            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
                 <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Communicative</p>
             </li>
-            <li class="benefit-item">
+            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
                 <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
                 <p class="benefit-item__text">Made in the USA!</p>
             </li>
@@ -98,10 +103,25 @@
         <p><small>&copy; Hayden Bradfield</small></p>
         <p><a href="https://www.haydenbradfield.com">www.haydenbradfield.com</a></p>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const contactForm = document.querySelector('.contact-form');
         const errbox = document.querySelector('.errbox');
         const subbut = document.querySelector('.subbut');
+        const submissionToast = document.querySelector('.submission-toast');
+
+
+        const resetForm = () => {
+            contactForm.reset();
+        }
+
+
+        const flashSubmitToast = () => {
+            submissionToast.classList.add('render');
+            setTimeout(() => {
+                submissionToast.classList.remove('render');
+            }, 5000);
+        }
 
         const submitForm = async e => {
             e.preventDefault();
@@ -146,7 +166,9 @@
                 if(!response.ok){
                     throw new Error();
                 }
-                alert('Successfully submitted!');
+                resetForm();
+                flashSubmitToast();
+
             }).catch(e => {
                 console.error(e);
                 errbox.insertAdjacentHTML('beforeend', '<li>An error has occurred.</li>');
@@ -159,6 +181,10 @@
         }
 
         contactForm.addEventListener('submit', submitForm);
+
+
+        AOS.init();  
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+.swiper {
+    max-width: 75rem;
+    margin:0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 30rem;
+    height: 30rem;
+}
+
+
+@media (max-width: 500px) {
+    .swiper-slide {
+        width: 24rem;
+        height: 24rem;
+    }
+}

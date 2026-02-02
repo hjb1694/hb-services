@@ -12,7 +12,11 @@
     <meta property="og:image" content="https://services.haydenbradfield.com/public/img/web_services_img.png" /> 
     <title>Hayden Bradfield - Independant Web Services</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=6" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=12" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 <body>
@@ -24,86 +28,119 @@
         <img class="submission-toast__icon" src="/public/icons/success_icon.svg" alt="success icon"/>
         <p class="submission-toast__message">Your inquiry has been successfully submitted!</p>
     </div>
-    <section class="hero">
-        <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto" playsinline></video>
-        <h3 class="hero__text">Take your idea to the digital world</h3>
-        <a class="hero__action-btn" href="#services">View Services</a>
-    </section>
-    <section class="services" id="services">
-        <div class="service-tile-collection">
-            <div class="service-tile">
-                <img src="/public/icons/code_3.svg" class="service-tile__icon" alt="code icon" />
-                <h4 class="service-tile__text">Custom Websites</h4>
-            </div>
-            <div class="service-tile">
-                <img src="/public/icons/search_up.svg" class="service-tile__icon" alt="search seo icon" />
-                <h4 class="service-tile__text">SEO</h4>
-            </div>
-            <div class="service-tile">
-                <img src="/public/icons/pwa.svg" class="service-tile__icon" alt="pwa icon" />
-                <h4 class="service-tile__text">PWA Development</h4>
-            </div>
-            <div class="service-tile">
-                <img src="/public/icons/head_idea.svg" class="service-tile__icon" alt="mind idea icon" />
-                <h4 class="service-tile__text">Consulting</h4>
-            </div>
-            <div class="service-tile">
-                <img src="/public/icons/mobile.svg" class="service-tile__icon" alt="phone with heart icon" />
-                <h4 class="service-tile__text">Hybrid Apps</h4>
-            </div>
-        </div>
-    </section>
-    <section class="benefits">
-        <ul class="benefit-list">
-            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
-                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                <p class="benefit-item__text">Affordable</p>
-            </li>
-            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
-                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                <p class="benefit-item__text">Dependable</p>
-            </li>
-            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
-                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                <p class="benefit-item__text">Communicative</p>
-            </li>
-            <li class="benefit-item" data-aos="fade-up" data-aos-duration="500">
-                <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                <p class="benefit-item__text">Made in the USA!</p>
-            </li>
-        </ul>
-    </section>
-    <section class="contact">
-        <h2 class="contact__heading">Inquire Today</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <div class="text-field">
-                    <label class="text-field__label" for="fullname">Name</label>
-                    <input class="text-field__input" type="text" id="fullname" maxlength="50"/>
+    <main>
+        <section class="hero">
+            <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto" playsinline></video>
+            <h3 class="hero__text">Take your idea to the digital world</h3>
+            <a class="hero__action-btn" href="#services">View Services</a>
+        </section>
+        <section class="services" id="services">
+            <div class="service-tile-collection">
+                <div class="service-tile">
+                    <img src="/public/icons/code_3.svg" class="service-tile__icon" alt="code icon" />
+                    <h4 class="service-tile__text">Custom Websites</h4>
+                </div>
+                <div class="service-tile">
+                    <img src="/public/icons/search_up.svg" class="service-tile__icon" alt="search seo icon" />
+                    <h4 class="service-tile__text">SEO</h4>
+                </div>
+                <div class="service-tile">
+                    <img src="/public/icons/pwa.svg" class="service-tile__icon" alt="pwa icon" />
+                    <h4 class="service-tile__text">PWA Development</h4>
+                </div>
+                <div class="service-tile">
+                    <img src="/public/icons/head_idea.svg" class="service-tile__icon" alt="mind idea icon" />
+                    <h4 class="service-tile__text">Consulting</h4>
+                </div>
+                <div class="service-tile">
+                    <img src="/public/icons/mobile.svg" class="service-tile__icon" alt="phone with heart icon" />
+                    <h4 class="service-tile__text">Hybrid Apps</h4>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="text-field">
-                    <label class="text-field__label" for="email">Email</label>
-                    <input class="text-field__input" type="text" id="email" maxlength="150"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <textarea class="message-area" placeholder="Type your message here :)" id="message" maxlength="1000"></textarea>
-            </div>
-            <div class="form-group">
-                <button class="subbut">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
-            </div>
-            <ul class="errbox">
-
+        </section>
+        <section class="benefits">
+            <ul class="benefit-list">
+                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
+                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+                    <p class="benefit-item__text">Affordable</p>
+                </li>
+                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
+                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+                    <p class="benefit-item__text">Dependable</p>
+                </li>
+                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
+                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+                    <p class="benefit-item__text">Communicative</p>
+                </li>
+                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
+                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+                    <p class="benefit-item__text">Made in the USA!</p>
+                </li>
             </ul>
-        </form>
-    </section>
+        </section>
+        <section class="work-examples">
+            <div class="swiper carousel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="website-example-thumb">
+                            <img class="website-example-thumb__img" src="/public/img/bmj_stone_snapshot.png" alt="BMJ Stone" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="website-example-thumb">
+                            <img class="website-example-thumb__img" src="/public/img/selah_design_snapshot.png" alt="Selah Custom Designs" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="website-example-thumb">
+                            <img class="website-example-thumb__img" src="/public/img/mjm_consulting_snapshot.png" alt="MJM Consulting" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="website-example-thumb">
+                            <img class="website-example-thumb__img" src="/public/img/tnesi_snapshot.png" alt="TNESI" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="website-example-thumb">
+                            <img class="website-example-thumb__img" src="/public/img/hayden_bradfield_snapshot.png" alt="Hayden Bradfield" />
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="contact">
+            <h2 class="contact__heading">Inquire Today</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <div class="text-field">
+                        <label class="text-field__label" for="fullname">Name</label>
+                        <input class="text-field__input" type="text" id="fullname" maxlength="50"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text-field">
+                        <label class="text-field__label" for="email">Email</label>
+                        <input class="text-field__input" type="text" id="email" maxlength="150"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="message-area" placeholder="Type your message here :)" id="message" maxlength="1000"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="subbut">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
+                </div>
+                <ul class="errbox"></ul>
+            </form>
+        </section>
+    </main>
     <footer class="footer">
         <p><small>&copy; Hayden Bradfield</small></p>
         <p><a href="https://www.haydenbradfield.com">www.haydenbradfield.com</a></p>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
         const contactForm = document.querySelector('.contact-form');
         const errbox = document.querySelector('.errbox');
@@ -181,6 +218,25 @@
         }
 
         contactForm.addEventListener('submit', submitForm);
+
+        const swiper = new Swiper(".carousel", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            loop: true,
+            autoplay: true
+        });
 
 
         AOS.init();  

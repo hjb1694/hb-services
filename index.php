@@ -16,7 +16,7 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=12" />
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=15" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 <body>
@@ -112,31 +112,41 @@
         </section>
         <section class="contact">
             <h2 class="contact__heading">Inquire Today</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <div class="text-field">
-                        <label class="text-field__label" for="fullname">Name</label>
-                        <input class="text-field__input" type="text" id="fullname" maxlength="50"/>
+            <div class="contact__content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <div class="text-field">
+                            <label class="text-field__label" for="fullname">Name</label>
+                            <input class="text-field__input" type="text" id="fullname" maxlength="50"/>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="text-field">
-                        <label class="text-field__label" for="email">Email</label>
-                        <input class="text-field__input" type="text" id="email" maxlength="150"/>
+                    <div class="form-group">
+                        <div class="text-field">
+                            <label class="text-field__label" for="email">Email</label>
+                            <input class="text-field__input" type="text" id="email" maxlength="150"/>
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <textarea class="message-area" placeholder="Type your message here :)" id="message" maxlength="1000"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="subbut">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
+                    </div>
+                    <ul class="errbox"></ul>
+                </form>
+                <div class="phone-contact-info">
+                    <h3 class="phone-contact-info__heading">Rather Call or Text?</h3>
+                    <div class="phone-circle">
+                        <img src="/public/icons/mobile_2.svg" alt="phone icon" />
+                    </div>
+                    <p class="phone-contact-info__number">(865) 248-5041</p>
+                    <p class="phone-contact-info__hours">Available Mon-Sat 12:00PM-6:00PM ET</p>
                 </div>
-                <div class="form-group">
-                    <textarea class="message-area" placeholder="Type your message here :)" id="message" maxlength="1000"></textarea>
-                </div>
-                <div class="form-group">
-                    <button class="subbut">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
-                </div>
-                <ul class="errbox"></ul>
-            </form>
+            </div>
         </section>
     </main>
     <footer class="footer">
-        <p><small>&copy; Hayden Bradfield</small></p>
+        <p><small>&copy;2026 Hayden Bradfield</small></p>
         <p><a href="https://www.haydenbradfield.com">www.haydenbradfield.com</a></p>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

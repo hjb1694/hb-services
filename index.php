@@ -22,7 +22,7 @@
 <body>
     <header class="header">
         <h1 class="header__logo"><img src="/public/icons/code_icon.svg" class="header__logo-icon" alt="code icon"/> Hayden Bradfield</h1>
-        <h2 class="header__subtext">Independant Web Development Services</h2>
+        <h2 class="header__subtext">Independent Web Development Services</h2>
     </header>
     <div class="submission-toast">
         <img class="submission-toast__icon" src="/public/icons/success_icon.svg" alt="success icon"/>

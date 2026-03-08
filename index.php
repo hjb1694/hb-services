@@ -6,11 +6,11 @@
     <meta name="description" content="Hayden Bradfield provides web development services, custom websites, and more!" />
     <meta name="keywords" content="Hayden, Bradfield, web, development"/>
     <meta property="og:site_name" content="Hayden Bradfield Web Services" />
-    <meta property="og:title" content="Hayden Bradfield Web Services" />
+    <meta property="og:title" content="Hayden Bradfield - Affordable Custom Websites and Apps" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://services.haydenbradfield.com" />
     <meta property="og:image" content="https://services.haydenbradfield.com/public/img/web_services_img.png" /> 
-    <title>Hayden Bradfield - Independant Web Services</title>
+    <title>Hayden Bradfield - Affordable Custom Websites and Apps - Knoxville, TN</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
     rel="stylesheet"

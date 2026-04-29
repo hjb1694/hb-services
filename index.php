@@ -1,256 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hayden Bradfield of Knoxville, TN provides custom and affordable web development services, custom websites, and more!" />
-    <meta name="keywords" content="Hayden, Bradfield, web, development"/>
-    <meta property="og:site_name" content="Hayden Bradfield Web Services" />
-    <meta property="og:title" content="Hayden Bradfield - Affordable Custom Websites and Apps" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://services.haydenbradfield.com" />
-    <meta property="og:image" content="https://services.haydenbradfield.com/public/img/web_services_img.png" /> 
-    <title>Hayden Bradfield - Affordable Custom Websites and Apps - Knoxville, TN</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css?v=15" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-<body>
-    <header class="header">
-        <h1 class="header__logo"><img src="/public/icons/code_icon.svg" class="header__logo-icon" alt="code icon"/> Hayden Bradfield</h1>
-        <h2 class="header__subtext">Independent Web Development Services</h2>
-    </header>
-    <div class="submission-toast">
-        <img class="submission-toast__icon" src="/public/icons/success_icon.svg" alt="success icon"/>
-        <p class="submission-toast__message">Your inquiry has been successfully submitted!</p>
-    </div>
-    <main>
-        <section class="hero">
-            <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto" playsinline></video>
-            <h3 class="hero__text">Take your idea to the digital world</h3>
-            <a class="hero__action-btn" href="#services">View Services</a>
-        </section>
-        <section class="services" id="services">
-            <div class="service-tile-collection">
-                <div class="service-tile">
-                    <img src="/public/icons/code_3.svg" class="service-tile__icon" alt="code icon" />
-                    <h4 class="service-tile__text">Custom Websites</h4>
-                </div>
-                <div class="service-tile">
-                    <img src="/public/icons/search_up.svg" class="service-tile__icon" alt="search seo icon" />
-                    <h4 class="service-tile__text">SEO</h4>
-                </div>
-                <div class="service-tile">
-                    <img src="/public/icons/pwa.svg" class="service-tile__icon" alt="pwa icon" />
-                    <h4 class="service-tile__text">PWA Development</h4>
-                </div>
-                <div class="service-tile">
-                    <img src="/public/icons/head_idea.svg" class="service-tile__icon" alt="mind idea icon" />
-                    <h4 class="service-tile__text">Consulting</h4>
-                </div>
-                <div class="service-tile">
-                    <img src="/public/icons/mobile.svg" class="service-tile__icon" alt="phone with heart icon" />
-                    <h4 class="service-tile__text">Hybrid Apps</h4>
-                </div>
-            </div>
-        </section>
-        <section class="benefits">
-            <ul class="benefit-list">
-                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                    <p class="benefit-item__text">Affordable</p>
-                </li>
-                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                    <p class="benefit-item__text">Dependable</p>
-                </li>
-                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                    <p class="benefit-item__text">Communicative</p>
-                </li>
-                <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-                    <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
-                    <p class="benefit-item__text">Made in the USA!</p>
-                </li>
-            </ul>
-        </section>
-        <section class="work-examples">
-            <div class="swiper carousel">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="website-example-thumb">
-                            <img class="website-example-thumb__img" src="/public/img/bmj_stone_snapshot.png" alt="BMJ Stone" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="website-example-thumb">
-                            <img class="website-example-thumb__img" src="/public/img/selah_design_snapshot.png" alt="Selah Custom Designs" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="website-example-thumb">
-                            <img class="website-example-thumb__img" src="/public/img/mjm_consulting_snapshot.png" alt="MJM Consulting" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="website-example-thumb">
-                            <img class="website-example-thumb__img" src="/public/img/tnesi_snapshot.png" alt="TNESI" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="website-example-thumb">
-                            <img class="website-example-thumb__img" src="/public/img/hayden_bradfield_snapshot.png" alt="Hayden Bradfield" />
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-        <section class="contact">
-            <h2 class="contact__heading">Inquire Today</h2>
-            <div class="contact__content">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <div class="text-field">
-                            <label class="text-field__label" for="fullname">Name</label>
-                            <input class="text-field__input" type="text" id="fullname" maxlength="50"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="text-field">
-                            <label class="text-field__label" for="email">Email</label>
-                            <input class="text-field__input" type="text" id="email" maxlength="150"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="message-area" placeholder="Type your message here :)" id="message" maxlength="1000"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button class="subbut">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
-                    </div>
-                    <ul class="errbox"></ul>
-                </form>
-                <div class="phone-contact-info">
-                    <h3 class="phone-contact-info__heading">Rather Call or Text?</h3>
-                    <div class="phone-circle">
-                        <img src="/public/icons/mobile_2.svg" alt="phone icon" />
-                    </div>
-                    <p class="phone-contact-info__number">(865) 248-5041</p>
-                    <p class="phone-contact-info__hours">Available Mon-Sat 12:00PM-6:00PM ET</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p><small>&copy;2026 Hayden Bradfield</small></p>
-        <p><a href="https://www.haydenbradfield.com">www.haydenbradfield.com</a></p>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script>
-        const contactForm = document.querySelector('.contact-form');
-        const errbox = document.querySelector('.errbox');
-        const subbut = document.querySelector('.subbut');
-        const submissionToast = document.querySelector('.submission-toast');
+<?php
+
+use Slim\Factory\AppFactory;
+use Slim\Views\PhpRenderer;
+use Dotenv\Dotenv;
+use Slim\Views\Twig;
+use Slim\Views\TwigMiddleware;
+use Slim\Exception\HttpNotFoundException;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$dotenv = DotEnv::createImmutable(__DIR__);
+$dotenv->load();
+
+require './router/router.php';
+
+$app = AppFactory::create();
 
 
-        const resetForm = () => {
-            contactForm.reset();
-        }
+$errorHandler = function(Request $request, $exception) use ($app){
+    $response = $app->getResponseFactory()->createResponse();
+    if($exception instanceof HttpNotFoundException){
+        return $response->withHeader("Location", "/")->withStatus(302);
+    }else{
+        return $response->withStatus(500);
+    }
+};
+
+$errorMiddleware = $app->addErrorMiddleware(true, true, true);
+$errorMiddleware->setDefaultErrorHandler($errorHandler);
 
 
-        const flashSubmitToast = () => {
-            submissionToast.classList.add('render');
-            setTimeout(() => {
-                submissionToast.classList.remove('render');
-            }, 5000);
-        }
+$twig = Twig::create(__DIR__ . '/views', ['cache' => false, 'debug' => true]);
+$app->add(TwigMiddleware::create($app, $twig));
 
-        const submitForm = async e => {
-            e.preventDefault();
-            errbox.innerHTML = '';
-            errbox.classList.remove('show');
-            const errors = [];
+use_router($app);
 
-            const fields = {
-                fullName: document.querySelector('#fullname'),
-                email: document.querySelector('#email'),
-                message: document.querySelector('#message')
-            }
-            const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
-
-            (fields.fullName.value.trim().length < 2) && errors.push('Please enter a valid name.');
-            (!emailRegExp.test(fields.email.value.trim())) && errors.push('Please enter a valid email address.');
-            (fields.message.value.trim().length < 10) && errors.push('Please include a longer message.');
-
-            if(errors.length){
-                for(let error of errors){
-                    errbox.insertAdjacentHTML('beforeend', `<li>${error}</li>`);
-                }
-                errbox.classList.add('show');
-                return;
-            }
-
-            subbut.innerHTML = "Sending...";
-
-           
-            fetch('https://services.haydenbradfield.com/process_contact_form.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'appplication/json'
-            },
-            body: JSON.stringify({
-                full_name: fields.fullName.value.trim(),
-                email: fields.email.value.trim(),
-                message: fields.message.value.trim()
-            })
-            }).then(response => {
-                if(!response.ok){
-                    throw new Error();
-                }
-                resetForm();
-                flashSubmitToast();
-
-            }).catch(e => {
-                console.error(e);
-                errbox.insertAdjacentHTML('beforeend', '<li>An error has occurred.</li>');
-                errbox.classList.add('show');
-            }).finally(() => {
-                subbut.innerHTML = `Submit <img src="/public/icons/send_icon.svg" alt="send icon" />`;
-            });
-               
-
-        }
-
-        contactForm.addEventListener('submit', submitForm);
-
-        const swiper = new Swiper(".carousel", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            loop: true,
-            autoplay: true
-        });
+$app->run();
 
 
-        AOS.init();  
-        
-    </script>
-</body>
-</html>
+?>

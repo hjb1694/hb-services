@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        {% endblock head %}
+    </head>
+    <body>
+        {% include 'partials/header.partial.twig' %}
+        {% include 'partials/inquiry_success_toast.partial.twig' %}
+        <main>
+        {% block main %}
+        {% endblock main %}
+        </main>
+        {% include 'partials/footer.partial.twig' %}
+    </body>
+    {% block scripts %}
+    {% endblock scripts %}
+</html>

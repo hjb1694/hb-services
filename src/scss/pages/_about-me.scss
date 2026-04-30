@@ -1,0 +1,68 @@
+.about-me-page {
+    min-height:90vh;
+    background: #eee;
+}
+
+.about-me-header {
+    min-height: 16rem;
+    background: rgb(48, 64, 76);
+    position: relative;
+
+    &__portrait {
+        border-radius: 90%;
+        border: 6px solid rgb(59, 134, 185);
+        filter:drop-shadow(10px);
+        height: 20rem;
+        position: absolute;
+        bottom: -7.5rem;
+        left: calc(50% - 30rem);
+    }
+
+    &__text {
+        color: #eee;
+        font-size: 2.6rem;
+        position: absolute;
+        bottom: 2rem;
+        left: calc(50% - 5rem);
+    }
+}
+
+.about-me-article {
+    max-width: 90rem;
+    margin: 12rem auto;
+
+    p {
+        font-size: 1.8rem;
+        line-height: 1.8;
+
+        &:not(:first-child){
+            margin-top: 2rem;
+        }
+
+        
+    }
+}
+
+
+@media (max-width: 700px) {
+    .about-me-header {
+
+        padding: 2rem;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        &__portrait {
+            position: static;
+        }
+        &__text {
+            position: static;
+            margin-top: 2rem;
+        }
+    }
+
+    .about-me-article {
+        padding: 3rem 2rem;
+        margin:0;
+    }
+}

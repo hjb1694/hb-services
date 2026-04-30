@@ -1,0 +1,47 @@
+{% extends 'partials/base.twig' %}
+
+{% block head %}
+{% from 'partials/head.macro.twig' import head_macro %}
+{{ head_macro('About Hayden Bradfield', 'https://haydenbwebservices.com/about-me') }}
+{% endblock %}
+
+{% block main %}
+<section class="about-me-page">
+    <div class="about-me-header">
+        <img class="about-me-header__portrait" src="/public/img/hayden_bradfield.webp" alt="image of Hayden Bradfield" />
+        <h3 class="about-me-header__text">About Hayden Bradfield</h3>
+    </div>
+    <article class="about-me-article">
+        <p>
+        Hello, my name is Hayden Bradfield, and I am a skilled developer with years of professional experience. I have worked on projects
+        for small businesses all the way up to large, multi-billion-dollar companies. I am very passionate in my craft, and I am always
+        eager to apply my skills any way I can. My goal today is to use my talents to create digital products, including websites, web applications, and mobile apps
+        for small business and startups who are trying to launch and generate their first successes.
+        </p>
+        <p>
+        I try to offer services that are highly affordable yet offer high-quality results. My fees and service prices far undercut any of my competitors here
+        in Knoxville, Tennessee, and my focus is producing meaningful and purposeful work rather than achieving high profit margins. It is not unusual for a simple, static website
+        I create to be under $1000 for my clients.
+        </p>
+        <p>
+        I am skilled in a wide array of technologies, and I can produce work ranging from simple to complex. I hope I can be a valuable asset to anyone
+        seeking high-quality yet affordable web development services! Do you have an idea in mind? Please do not hesitate to reach out to me.
+        </p>
+    </article>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const navToggleBtn = document.querySelector('.nav-toggle-btn');
+    const nav = document.querySelector('.header__nav');
+
+
+
+    navToggleBtn.addEventListener('click', () => {
+        nav.classList.toggle('show');
+    });
+ 
+    
+</script>
+{% endblock %}

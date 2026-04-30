@@ -15,6 +15,9 @@
 @use "./components/contact-section";
 @use "./components/footer";
 
+//Pages
+@use "./pages/about-me";
+
 
 @media (max-width: 600px) {
     .benefit-item {

@@ -12,6 +12,11 @@ function use_router($app) {
         return $view->render($response, 'home.page.twig');
     });
 
+    $app->get('/about-me', function (Request $request, Response $response) {
+        $view = Twig::fromRequest($request);
+        return $view->render($response, 'about_me.page.twig');
+    });
+
 }
 
 ?>

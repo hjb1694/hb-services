@@ -90,6 +90,10 @@
         &__list {
             margin-top:2rem;
         }
+
+        &:nth-child(even) > .niche-market-tile__img {
+        order: 0;
+    }
     }
 
 }

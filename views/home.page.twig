@@ -131,6 +131,8 @@
     const errbox = document.querySelector('.errbox');
     const subbut = document.querySelector('.subbut');
     const submissionToast = document.querySelector('.submission-toast');
+    const navToggleBtn = document.querySelector('.nav-toggle-btn');
+    const nav = document.querySelector('.header__nav');
 
 
     const resetForm = () => {
@@ -221,6 +223,10 @@
         },
         loop: true,
         autoplay: true
+    });
+
+    navToggleBtn.addEventListener('click', () => {
+        nav.classList.toggle('show');
     });
 
 

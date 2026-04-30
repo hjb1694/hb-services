@@ -174,18 +174,20 @@
 
         subbut.innerHTML = "Sending...";
 
+        const fd = new FormData();
+        fd.append('full_name', fields.fullName.value.trim());
+        fd.append('email', fields.email.value.trim());
+        fd.append('message', fields.message.value.trim());
+
         
-        fetch('https://services.haydenbradfield.com/process_contact_form.php', {
+        fetch('/contact', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'appplication/json'
         },
-        body: JSON.stringify({
-            full_name: fields.fullName.value.trim(),
-            email: fields.email.value.trim(),
-            message: fields.message.value.trim()
-        })
+        body: fd
         }).then(response => {
             if(!response.ok){
                 throw new Error();

@@ -69,7 +69,7 @@ function use_router($app) {
             $SAFE_email = sanitize($email);
             $SAFE_message = sanitize($message);
 
-            require "../dbo.php";
+            require "./dbo.php";
 
             $conn = createDbInstance();
 
@@ -78,6 +78,9 @@ function use_router($app) {
             $stmt->execute();
             $stmt->close();
             $conn->close();
+
+            return $response->withHeader('Content-Type', 'application/json')->withStatus(201);
+
 
         }catch(Exception $e){
             $code;

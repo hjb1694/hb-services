@@ -5,7 +5,7 @@
 
 .about-me-header {
     min-height: 16rem;
-    background: rgb(48, 64, 76);
+    background: #30404c;
     position: relative;
 
     &__portrait {
@@ -47,7 +47,7 @@
 @media (max-width: 700px) {
     .about-me-header {
 
-        padding: 2rem;
+        padding: 3.5rem 2rem;
         display: flex;
         flex-flow: column wrap;
         align-items: center;

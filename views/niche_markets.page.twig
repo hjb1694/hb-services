@@ -1,0 +1,115 @@
+{% extends 'partials/base.twig' %}
+
+{% block head %}
+{% from 'partials/head.macro.twig' import head_macro %}
+{{ head_macro('About Hayden Bradfield', 'https://haydenbwebservices.com/about-me') }}
+{% endblock %}
+
+{% block main %}
+<section class="niche-markets-page">
+    <div class="niche-markets-header">
+        <h3 class="niche-markets-header__text">Niche Markets</h3>
+    </div>
+    <article class="niche-markets-content">
+        <div class="niche-market-tile">
+            <img class="niche-market-tile__img" src="/public/img/cleaning.jpg" alt="cleaning" />
+            <div class="niche-market-tile__body">
+                <h4 class="niche-market-tile__heading">Gig-Economy and Small Locally-Grown Service Industry</h4>
+                <ul class="niche-market-tile__list">
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Cleaning Services</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Lawn Care</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Handyman Services</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Auto Detailing</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Lifting and Moving</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Consulting</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="niche-market-tile">
+            <img class="niche-market-tile__img" src="/public/img/boutique.jpg" alt="cleaning" />
+            <div class="niche-market-tile__body">
+                <h4 class="niche-market-tile__heading">Small, Local Retail Business</h4>
+                <ul class="niche-market-tile__list">
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Boutiques</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Crafts</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Jewelry Creatives</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Stone and Material Shops</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="niche-market-tile">
+            <img class="niche-market-tile__img" src="/public/img/parade_horse.jpg" alt="cleaning" />
+            <div class="niche-market-tile__body">
+                <h4 class="niche-market-tile__heading">Events and Temporary Campaigns</h4>
+                <ul class="niche-market-tile__list">
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Entertainment Events</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Political Campaigns</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Church Events</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Festivals</span>
+                    </li>
+                    <li>
+                        <img class="check-icon" src="/public/icons/box_check_blue.svg" alt="checkbox icon" />
+                        <span>Charity Events</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const navToggleBtn = document.querySelector('.nav-toggle-btn');
+    const nav = document.querySelector('.header__nav');
+
+
+
+    navToggleBtn.addEventListener('click', () => {
+        nav.classList.toggle('show');
+    });
+ 
+    
+</script>
+{% endblock %}

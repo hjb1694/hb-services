@@ -57,6 +57,13 @@
             color: #ddd;
             font-size: 1.8rem;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+
+            .external-link-icon {
+                width: 3rem;
+            }
         }
     }
 }
@@ -144,7 +151,7 @@
             }
 
             &.show {
-                height: 12rem;
+                height: 16rem;
                 padding:2.5rem 0;
             }
         }

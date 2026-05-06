@@ -83,6 +83,10 @@
     width: 18rem;
     font-weight: bold;
     text-transform: uppercase;
+
+    &:active {
+        background: #000;
+    }
 }
 
 

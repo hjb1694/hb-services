@@ -205,6 +205,9 @@
             errbox.classList.add('show');
         }).finally(() => {
             subbut.innerHTML = `Submit <img src="/public/icons/send_icon.svg" alt="send icon" />`;
+            if(hcaptcha){
+                hcaptcha.reset();
+            }
         });
             
 

@@ -10,12 +10,13 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/util/send_contact_alert_email.php';
 
 $dotenv = DotEnv::createImmutable(__DIR__);
 $dotenv->load();
 
-require './router/router.php';
+require __DIR__ . '/util/send_contact_alert_email.php';
+require __DIR__ . '/util/verify_captcha.php';
+require __DIR__ . '/router/router.php';
 
 $app = AppFactory::create();
 

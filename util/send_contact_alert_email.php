@@ -9,9 +9,9 @@ function sendContactInquiryAlertEmail($submitter_email, $submitter_full_name, $s
 
         $sender = $_ENV['CONTACT_ALERT_FROM_EMAIL'];
         $sender_name = "Automatic Sender";
-        $SMTP_username = $_ENV['AMAZON_SMTP_USERNAME'];
-        $SMTP_password = $_ENV['AMAZON_SMTP_PASSWORD'];
-        $host = 'email-smtp.us-east-2.amazonaws.com';
+        $SMTP_username = $_ENV['SMTP_USERNAME'];
+        $SMTP_password = $_ENV['SMTP_PASSWORD'];
+        $host = $_ENV['SMTP_HOST'];
         $port = 587;
         $to_email = $_ENV['CONTACT_ALERT_TO_EMAIL'];
         $cc_email = $_ENV['CONTACT_ALERT_CC_EMAIL'];
@@ -42,9 +42,9 @@ function sendContactInquiryAlertEmail($submitter_email, $submitter_full_name, $s
         $mail->Send();
 
     }catch(phpMailerException $e){
-        
+        throw $e;
     }catch(Exception $e){
-        
+        throw $e;
     }
 
 }

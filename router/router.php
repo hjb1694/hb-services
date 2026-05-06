@@ -29,7 +29,7 @@ function use_router($app) {
 
             $body = $request->getParsedBody();
 
-            $fields = ['full_name', 'email', 'message'];
+            $fields = ['full_name', 'email', 'message', 'h-captcha-response'];
 
             foreach($fields as $field) {
                 foreach($body as $key => $value){
@@ -37,6 +37,10 @@ function use_router($app) {
                         throw new Exception('FIELD_NOT_SET');
                     }
                 }
+            }
+
+            if(verifyCaptchaToken($body['h-captcha-response'], $_SERVER['REMOTE_ADDR'])[0] === false){
+                throw new Exception('FALSE_CAPTCHA');
             }
 
             function sanitize($value) {
@@ -99,6 +103,10 @@ function use_router($app) {
                     case "VALIDATION_ERRORS":
                         $code = 422;
                         $payload = ["error" => "VALIDATION_ERRORS", "details" => $validationErrors];
+                        break;
+                    case "FALSE_CAPTCHA":
+                        $code = 422;
+                        $payload = ["Error" => "FALSE_CAPTCHA", "details" => "Captcha Validation Failed."];
                         break;
                     default:
                         $code = 500;

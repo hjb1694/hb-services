@@ -90,7 +90,7 @@
 <section class="contact">
     <h2 class="contact__heading">Inquire Today</h2>
     <div class="contact__content">
-        <form class="contact-form">
+        <form class="contact-form" id="contact-form">
             <div class="form-group">
                 <div class="text-field">
                     <label class="text-field__label" for="fullname">Name</label>
@@ -107,7 +107,10 @@
                 <textarea class="message-area" placeholder="Type your message here :)" id="message" maxlength="1000"></textarea>
             </div>
             <div class="form-group">
-                <button class="subbut">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
+                <div class="h-captcha" style="margin:0 auto;width:fit-content;" data-sitekey="2db6d9bc-9436-4d54-a452-56a489840b7c"></div>
+            </div>
+            <div class="form-group">
+                <button class="subbut" form="contact-form">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
             </div>
             <ul class="errbox"></ul>
         </form>
@@ -116,6 +119,7 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script>
@@ -150,11 +154,18 @@
             email: document.querySelector('#email'),
             message: document.querySelector('#message')
         }
+        let hcaptchaToken;
         const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
 
         (fields.fullName.value.trim().length < 2) && errors.push('Please enter a valid name.');
         (!emailRegExp.test(fields.email.value.trim())) && errors.push('Please enter a valid email address.');
         (fields.message.value.trim().length < 10) && errors.push('Please include a longer message.');
+
+        if(document.getElementsByName("h-captcha-response").length && document.getElementsByName("h-captcha-response")[0].value){
+            hcaptchaToken = document.getElementsByName("h-captcha-response")[0].value;
+        }else{
+            errors.push('Please complete the anti-spam challenge.');
+        }
 
         if(errors.length){
             for(let error of errors){
@@ -170,6 +181,7 @@
         fd.append('full_name', fields.fullName.value.trim());
         fd.append('email', fields.email.value.trim());
         fd.append('message', fields.message.value.trim());
+        fd.append('h-captcha-response', hcaptchaToken);
 
         
         fetch('/contact', {

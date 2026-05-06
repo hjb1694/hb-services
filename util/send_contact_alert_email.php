@@ -15,11 +15,13 @@ function sendContactInquiryAlertEmail($submitter_email, $submitter_full_name, $s
         $port = 587;
         $to_email = $_ENV['CONTACT_ALERT_TO_EMAIL'];
         $cc_email = $_ENV['CONTACT_ALERT_CC_EMAIL'];
-        $subject = "New Contact inquiry Submitted";
+        $subject = "New Contact Inquiry Submission";
 
         $html_body = "<p>You have received the following contact inquiry for Hayden Bradfield Web Services:</p><table style=\"margin-top:16px;border-collapse:collapse;border:1px solid #333;\"><tbody><tr><td style=\"border:1px solid #333;padding:10px;\">Full Name</td><td style=\"border: 1px solid #333;padding:10px;\">$submitter_full_name</td></tr><tr><td style=\"border:1px solid #333;padding:10px;\">Email Address</td><td style=\"border:1px solid #333;padding:10px;\">$submitter_email</td></tr><tr><td style=\"border:1px solid #333;padding:10px;\">Message Body</td><td style=\"border:1px solid #333;padding:10px;\">$submitter_message</td></tr></tbody></table>";
 
-        $mail = new PHPMailer();
+        $mail = new PHPMailer(true);
+
+        $mail->SMTPDebug = 2;
 
         $mail->isSMTP();
         $mail->setFrom($sender, $sender_name);
@@ -31,13 +33,19 @@ function sendContactInquiryAlertEmail($submitter_email, $submitter_full_name, $s
         $mail->SMTPSecure = 'tls';
 
         $mail->addAddress($to_email);
-        $email->addCC($cc_email);
+        $mail->addCC($cc_email);
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = $html_body;
 
-    }catch(Exception $e){}
+        $mail->Send();
+
+    }catch(phpMailerException $e){
+        
+    }catch(Exception $e){
+        
+    }
 
 }
 

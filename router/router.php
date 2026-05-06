@@ -4,9 +4,6 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\Twig;
 
-require "../util/send_contact_alert_email.php";
-
-
 function use_router($app) {
 
     $app->get('/', function (Request $request, Response $response) {

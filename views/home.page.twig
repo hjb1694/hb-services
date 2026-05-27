@@ -7,7 +7,7 @@
 
 {% block main %}
 <section class="hero">
-    <video class="hero__bg-vid" src="/public/videos/output.mp4" autoplay loop muted preload="auto" playsinline></video>
+    <video class="hero__bg-vid" src="/public/videos/output.webm" autoplay loop muted preload="auto" playsinline></video>
     <h3 class="hero__text">Take your idea to the digital world</h3>
     <a class="hero__action-btn" href="#services">View Services</a>
 </section>
@@ -38,19 +38,19 @@
 <section class="benefits">
     <ul class="benefit-list">
         <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-            <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+            <img class="benefit-icon" src="/public/icons/money_hand_icon.svg" alt="blue checkmark icon" />
             <p class="benefit-item__text">Affordable</p>
         </li>
-        <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-            <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+        <li class="benefit-item" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+            <img class="benefit-icon" src="/public/icons/bicep_strong_icon.svg" alt="blue checkmark icon" />
             <p class="benefit-item__text">Dependable</p>
         </li>
         <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-            <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+            <img class="benefit-icon" src="/public/icons/talk_bubbles_icon.svg" alt="blue checkmark icon" />
             <p class="benefit-item__text">Communicative</p>
         </li>
-        <li class="benefit-item" data-aos="fade-up" data-aos-duration="400">
-            <img class="checkmark-icon" src="/public/icons/blue_check.svg" alt="blue checkmark icon" />
+        <li class="benefit-item" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+            <img class="benefit-icon" src="/public/icons/us_flag.svg" alt="blue checkmark icon" />
             <p class="benefit-item__text">Made in the USA!</p>
         </li>
     </ul>
@@ -106,8 +106,8 @@
             <div class="form-group">
                 <textarea class="message-area" placeholder="Type your message here :)" id="message" maxlength="1000"></textarea>
             </div>
-            <div class="form-group">
-                <div class="h-captcha" style="margin:0 auto;width:fit-content;" data-sitekey="2db6d9bc-9436-4d54-a452-56a489840b7c"></div>
+            <div class="form-group" id="hcaptcha-container" style="display:flex;justify-content:center;">
+                {# <div class="h-captcha" style="margin:0 auto;width:fit-content;" data-sitekey="2db6d9bc-9436-4d54-a452-56a489840b7c"></div> #}
             </div>
             <div class="form-group">
                 <button class="subbut" form="contact-form">Submit <img src="/public/icons/send_icon.svg" alt="send icon" /></button>
@@ -129,6 +129,56 @@
     const submissionToast = document.querySelector('.submission-toast');
     const navToggleBtn = document.querySelector('.nav-toggle-btn');
     const nav = document.querySelector('.header__nav');
+    let hcaptchaWidgetId = null;
+    let hcaptchaSolveToken = null;
+
+    const fields = {
+        fullName: document.querySelector('#fullname'),
+        email: document.querySelector('#email'),
+        message: document.querySelector('#message')
+    }
+
+
+    const onCaptchaSolve = token => (hcaptchaSolveToken = token);
+
+    const renderCaptcha = () => {
+
+        if(hcaptcha && !hcaptchaWidgetId){
+
+            const hcaptchaWidgetSize = window.innerWidth < 600 ? 'compact' : 'normal';
+
+            hcaptchaWidgetId = hcaptcha.render('hcaptcha-container', {
+                sitekey: '2db6d9bc-9436-4d54-a452-56a489840b7c',
+                size: hcaptchaWidgetSize,
+                callback: onCaptchaSolve
+            });
+
+        }
+    }
+
+
+    const validateContactForm = () => {
+        errbox.innerHTML = '';
+        errbox.classList.remove('show');
+        const errors = [];
+        const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
+
+        (fields.fullName.value.trim().length < 2) && errors.push('Please enter a valid name.');
+        (!emailRegExp.test(fields.email.value.trim())) && errors.push('Please enter a valid email address.');
+        (fields.message.value.trim().length < 10) && errors.push('Please include a longer message.');
+        (!hcaptchaSolveToken) && errors.push('Please complete the anti-spam challenge.');
+
+        if(errors.length){
+            for(let error of errors){
+                errbox.insertAdjacentHTML('beforeend', `<li>${error}</li>`);
+            }
+            errbox.classList.add('show');
+            hcaptchaSolveToken = null;
+            hcaptcha.reset();
+        }
+
+        return !!!errors.length;
+    }
 
 
     const resetForm = () => {
@@ -145,33 +195,13 @@
 
     const submitForm = async e => {
         e.preventDefault();
-        errbox.innerHTML = '';
-        errbox.classList.remove('show');
-        const errors = [];
 
-        const fields = {
-            fullName: document.querySelector('#fullname'),
-            email: document.querySelector('#email'),
-            message: document.querySelector('#message')
-        }
-        let hcaptchaToken;
-        const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi;
-
-        (fields.fullName.value.trim().length < 2) && errors.push('Please enter a valid name.');
-        (!emailRegExp.test(fields.email.value.trim())) && errors.push('Please enter a valid email address.');
-        (fields.message.value.trim().length < 10) && errors.push('Please include a longer message.');
-
-        if(document.getElementsByName("h-captcha-response").length && document.getElementsByName("h-captcha-response")[0].value){
-            hcaptchaToken = document.getElementsByName("h-captcha-response")[0].value;
-        }else{
-            errors.push('Please complete the anti-spam challenge.');
-        }
-
-        if(errors.length){
-            for(let error of errors){
-                errbox.insertAdjacentHTML('beforeend', `<li>${error}</li>`);
+        renderCaptcha();
+       
+        if(!validateContactForm()){
+            if(hcaptcha){
+                hcaptcha.reset();
             }
-            errbox.classList.add('show');
             return;
         }
 
@@ -181,7 +211,7 @@
         fd.append('full_name', fields.fullName.value.trim());
         fd.append('email', fields.email.value.trim());
         fd.append('message', fields.message.value.trim());
-        fd.append('h-captcha-response', hcaptchaToken);
+        fd.append('h-captcha-response', hcaptchaSolveToken);
 
         
         fetch('/contact', {
@@ -205,6 +235,7 @@
             errbox.classList.add('show');
         }).finally(() => {
             subbut.innerHTML = `Submit <img src="/public/icons/send_icon.svg" alt="send icon" />`;
+            hcaptchaSolveToken = null;
             if(hcaptcha){
                 hcaptcha.reset();
             }
@@ -213,6 +244,9 @@
 
     }
 
+    fields.fullName.addEventListener('focus', renderCaptcha);
+    fields.email.addEventListener('focus', renderCaptcha);
+    fields.message.addEventListener('focus', renderCaptcha);
     contactForm.addEventListener('submit', submitForm);
 
     const swiper = new Swiper(".carousel", {

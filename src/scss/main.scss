@@ -19,6 +19,9 @@
 @use "./pages/about-me";
 @use "./pages/niche-markets";
 
+//Pkg
+@use "./pkgs/aos/aos";
+
 
 @media (max-width: 600px) {
 

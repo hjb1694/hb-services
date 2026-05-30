@@ -1,0 +1,23 @@
+// Animations variables
+$aos-distance: 100px !default;
+
+/**
+ * Fade animations:
+ * fade
+ * fade-up, fade-down, fade-left, fade-right
+ * fade-up-right, fade-up-left, fade-down-right, fade-down-left
+ */
+
+[data-aos^='fade'][data-aos^='fade'] {
+  opacity: 0;
+  transition-property: opacity, transform;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+[data-aos='fade-up'] {
+  transform: translate3d(0, $aos-distance, 0);
+}

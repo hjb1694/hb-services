@@ -115,6 +115,11 @@
     text-transform: uppercase;
     border-radius: 1rem;
     cursor: pointer;
+    transition: background .3s;
+
+    &:hover {
+        background: #09233a;
+    }
 }
 
 .errbox {

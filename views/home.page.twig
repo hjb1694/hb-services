@@ -1,8 +1,30 @@
 {% extends 'partials/base.twig' %}
 
 {% block head %}
-{% from 'partials/head.macro.twig' import head_macro %}
-{{ head_macro('Hayden Bradfield - Affordable Custom Websites and Apps - Knoxville, TN', 'https://haydenbwebservices.com') }}
+    {% embed 'partials/head.embed.twig' %}
+        {% block ogtitle %}Hayden Bradfield - Affordable Custom Websites and Apps - Knoxville, TN{% endblock ogtitle %}
+        {% block ogurlpath %}https://haydenbwebservices.com/{% endblock ogurlpath %}
+        {% block title %}Hayden Bradfield - Affordable Custom Websites and Apps - Knoxville, TN{% endblock title %}
+        {% block canonicalurlpath %}https://haydenbwebservices.com/{% endblock canonicalurlpath %}
+        {% block pagespecificstylesheets %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+        {% endblock pagespecificstylesheets %}
+        {% block jsonld %}
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://haydenbwebservices.com/",
+                "url": "https://haydenbwebservices.com/",
+                "name": "Hayden Bradfield Web Services",
+                "publisher": {
+                    "@type": "Person",
+                    "name": "Hayden Bradfield"
+                }
+            }
+        </script>
+        {% endblock jsonld %}
+    {% endembed %}
 {% endblock %}
 
 {% block main %}

@@ -1,8 +1,28 @@
 {% extends 'partials/base.twig' %}
 
 {% block head %}
-{% from 'partials/head.macro.twig' import head_macro %}
-{{ head_macro('About Hayden Bradfield', 'https://haydenbwebservices.com/about-me') }}
+    {% embed 'partials/head.embed.twig' %}
+        {% block ogtitle %}About Hayden Bradfield{% endblock ogtitle %}
+        {% block ogurlpath %}https://haydenbwebservices.com/about-me{% endblock ogurlpath %}
+        {% block title %}About Hayden Bradfield{% endblock title %}
+        {% block canonicalurlpath %}https://haydenbwebservices.com/about-me{% endblock canonicalurlpath %}
+        {% block pagespecificstylesheets %}{% endblock pagespecificstylesheets %}
+        {% block jsonld %}
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": "https://haydenbwebservices.com/about-me",
+                "url": "https://haydenbwebservices.com/about-me",
+                "name": "About Hayden Bradfield",
+                "publisher": {
+                    "@type": "Person",
+                    "name": "Hayden Bradfield"
+                }
+            }
+        </script>
+        {% endblock jsonld %}
+    {% endembed %}
 {% endblock %}
 
 {% block main %}

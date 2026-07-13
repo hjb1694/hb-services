@@ -4,20 +4,39 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\Twig;
 
+
+function logVisit($page_visited) {
+    try{
+        require "./dbo.php";
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $conn = createDBInstance();
+
+        $stmt = $conn->prepare("INSERT INTO website_visits(ip_address, page_visited) VALUES (?,?)");
+        $stmt->bind_param("ss", $ip, $page_visited);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+    }catch(Exception $error){}
+    
+}
+
 function use_router($app) {
 
     $app->get('/', function (Request $request, Response $response) {
         $view = Twig::fromRequest($request);
+        logVisit('Main');
         return $view->render($response, 'home.page.twig');
     });
 
     $app->get('/about-me', function (Request $request, Response $response) {
         $view = Twig::fromRequest($request);
+        // logVisit('About Me');
         return $view->render($response, 'about_me.page.twig');
     });
 
     $app->get('/niche-markets', function (Request $request, Response $response) {
         $view = Twig::fromRequest($request);
+        // logVisit('Niche Markets');
         return $view->render($response, 'niche_markets.page.twig');
     });
 

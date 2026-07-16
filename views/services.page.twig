@@ -1,0 +1,86 @@
+{% extends 'partials/base.twig' %}
+
+{% block head %}
+    {% embed 'partials/head.embed.twig' %}
+        {% block ogtitle %}Services | Hayden Bradfield Web Services{% endblock ogtitle %}
+        {% block ogurlpath %}https://haydenbwebservices.com/services{% endblock ogurlpath %}
+        {% block title %}Services | Hayden Bradfield Web Services{% endblock title %}
+        {% block canonicalurlpath %}https://haydenbwebservices.com/services{% endblock canonicalurlpath %}
+        {% block pagespecificstylesheets %}{% endblock pagespecificstylesheets %}
+        {% block jsonld %}
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": "https://haydenbwebservices.com/services",
+                "url": "https://haydenbwebservices.com/services",
+                "name": "My Services",
+                "publisher": {
+                    "@type": "Person",
+                    "name": "Hayden Bradfield"
+                }
+            }
+        </script>
+        {% endblock jsonld %}
+    {% endembed %}
+{% endblock %}
+
+{% block main %}
+<section class="services-page">
+    <div class="services-page-header">
+        <h1 class="services-page-header__content"><img class="services-page-header__icon" src="/public/icons/pencil_ruler.svg" alt="pencil-ruler-icon" />My Services</h1>
+    </div>
+    <div class="services-page-content">
+        <div class="services-page-content__container">
+            <div class="service-desc-tile">
+                <div class="service-desc-tile__icon-circle">
+                    <img class="service-desc-tile__icon" src="/public/icons/code_3.svg" alt="code icon" />
+                </div>
+                <div class="service-desc-tile__body">
+                    <h2>Custom Web Design and Development</h2>
+                    <div class="service-desc-tile__desc-text">
+                        <p>Unlike most web design and development agencies who use Wordpress or drag-and-drop programs, I code and develop my websites from scratch pixel-by-pixel. My sites are highly affordable and highly customizable to your preference.I craft my websites with passion and dedication, and I incorporate aesthetic design into my development.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-desc-tile">
+                <div class="service-desc-tile__icon-circle">
+                    <img class="service-desc-tile__icon" src="/public/icons/pwa.svg" alt="pwa icon" />
+                </div>
+                <div class="service-desc-tile__body">
+                    <h2>Progressive Web Apps (PWAs)</h2>
+                    <div class="service-desc-tile__desc-text">
+                        <p>Are you seeking a website or web application that also has features similar to apps you would download directly to your device from an an app store? Are you looking for features like being able to download to the homescreen of a smartphone device with push notifications, offline capabilities, camera use, and other native-like features? Look no futher. Progressive Web Applications (PWAs) are your answer, and I can custom craft these to your liking.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-desc-tile">
+                <div class="service-desc-tile__icon-circle">
+                    <img class="service-desc-tile__icon" src="/public/icons/mobile.svg" alt="smartphone icon" />
+                </div>
+                <div class="service-desc-tile__body">
+                    <h2>Hybrid Mobile Apps</h2>
+                    <div class="service-desc-tile__desc-text">
+                        <p>Looking for mobile apps you can download from the iOS App Store or Google Play Store? I can develop these using web technologies and special plugins to make your idea a reality!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const navToggleBtn = document.querySelector('.nav-toggle-btn');
+    const nav = document.querySelector('.header__nav');
+
+
+
+    navToggleBtn.addEventListener('click', () => {
+        nav.classList.toggle('show');
+    });
+ 
+    
+</script>
+{% endblock %}

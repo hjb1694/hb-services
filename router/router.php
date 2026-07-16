@@ -34,6 +34,12 @@ function use_router($app) {
         return $view->render($response, 'about_me.page.twig');
     });
 
+    $app->get('/services', function (Request $request, Response $response) {
+        $view = Twig::fromRequest($request);
+        // logVisit('About Me');
+        return $view->render($response, 'services.page.twig');
+    });
+
     $app->get('/niche-markets', function (Request $request, Response $response) {
         $view = Twig::fromRequest($request);
         // logVisit('Niche Markets');
